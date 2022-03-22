@@ -278,6 +278,35 @@
      <string>없으면 알아서~</string>
     </property>
    </widget>
+   <widget class="QLabel" name="LoadingLabel">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>600</width>
+      <height>500</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <zorder>LoadingLabel</zorder>
+   <zorder>Title</zorder>
+   <zorder>FindExcelButton</zorder>
+   <zorder>FilePath</zorder>
+   <zorder>FilePathLabel</zorder>
+   <zorder>NicknameLabel</zorder>
+   <zorder>Nickname</zorder>
+   <zorder>FindNicknameButton</zorder>
+   <zorder>RunButton</zorder>
+   <zorder>DateLabel</zorder>
+   <zorder>StartDate</zorder>
+   <zorder>EndDate</zorder>
+   <zorder>DateNotice</zorder>
   </widget>
  </widget>
  <resources/>
