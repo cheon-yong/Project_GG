@@ -82,7 +82,7 @@
      <bool>false</bool>
     </property>
     <property name="text">
-     <string>파일경로</string>
+     <string/>
     </property>
     <property name="frame">
      <bool>true</bool>
@@ -92,6 +92,9 @@
     </property>
     <property name="readOnly">
      <bool>true</bool>
+    </property>
+    <property name="placeholderText">
+     <string>파일경로</string>
     </property>
    </widget>
    <widget class="QLabel" name="FilePathLabel">
@@ -185,6 +188,94 @@
     </property>
     <property name="text">
      <string>RUN</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="DateLabel">
+    <property name="geometry">
+     <rect>
+      <x>60</x>
+      <y>310</y>
+      <width>81</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Date</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="StartDate">
+    <property name="geometry">
+     <rect>
+      <x>160</x>
+      <y>310</y>
+      <width>131</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="mouseTracking">
+     <bool>true</bool>
+    </property>
+    <property name="accessibleName">
+     <string/>
+    </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
+    <property name="text">
+     <string>시작날짜</string>
+    </property>
+    <property name="frame">
+     <bool>true</bool>
+    </property>
+    <property name="dragEnabled">
+     <bool>true</bool>
+    </property>
+    <property name="readOnly">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="EndDate">
+    <property name="geometry">
+     <rect>
+      <x>310</x>
+      <y>310</y>
+      <width>141</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="mouseTracking">
+     <bool>true</bool>
+    </property>
+    <property name="accessibleName">
+     <string/>
+    </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
+    <property name="text">
+     <string>종료날짜</string>
+    </property>
+    <property name="frame">
+     <bool>true</bool>
+    </property>
+    <property name="dragEnabled">
+     <bool>true</bool>
+    </property>
+    <property name="readOnly">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="DateNotice">
+    <property name="geometry">
+     <rect>
+      <x>460</x>
+      <y>310</y>
+      <width>111</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>없으면 알아서~</string>
     </property>
    </widget>
   </widget>
