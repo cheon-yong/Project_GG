@@ -1,6 +1,8 @@
 import sys
 import os
 import openpyxl
+import time
+import requests
 from PyQt5.QtCore import *
 from PyQt5.QtWidgets import *
 from PyQt5 import uic, QtWidgets
@@ -12,12 +14,16 @@ form_class_Loading = uic.loadUiType("UI/loading.ui")[0]
 class MainWindow(QMainWindow, form_class_MainWindow) :
     filename = ""
     excel = ""
+    startDate = 0
+    endDate = 0
+
     def __init__(self) :
         super().__init__()
         self.setupUi(self)
 
         self.FindExcelButton.clicked.connect(self.OnClickFindExcelButton)
         self.FindNicknameButton.clicked.connect(self.OnClickFindNicknameButton)
+        self.RunButton.clicked.connect(self.OnClickRunButton)
 
     def OnClickFindExcelButton(self):
         filename = QtWidgets.QFileDialog.getOpenFileName(self, "Select Excel", filter='Excel (*.xlsx *.xls);;모든 파일 (*.*)')
@@ -36,18 +42,24 @@ class MainWindow(QMainWindow, form_class_MainWindow) :
             print("Fail File Search")
 
     def OnClickFindNicknameButton(self):
+        # TODO
+        # 1. 이름과 닉네임이 매칭되어있는 시트를 불러온다.
+        # 2. 이름과 닉네임을 Dictionary로 저장한다.
+        # 3. 랜덤한 닉네임을 추출한다.
         print("FindNickname")
 
-    @pyqtSlot()
+    def OnClickRunButton(self):
+        print("Run")
+
+    def CalEpochTime(self, time):
+        print("Cal")
+        return time
+
     def StartLoading(self):
         self.Loading = Loading(self)
 
-    @pyqtSlot()
     def StopLoading(self):
         self.Loading.deleteLater()
-
-
-
 
 class Loading(QWidget, form_class_Loading):
 
