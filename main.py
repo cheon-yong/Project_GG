@@ -13,7 +13,8 @@ form_class_Loading = uic.loadUiType("UI/loading.ui")[0]
 
 class MainWindow(QMainWindow, form_class_MainWindow) :
     filename = ""
-    excel = ""
+    excel = None
+    sheet = None
     startDate = 0
     endDate = 0
 
@@ -35,12 +36,36 @@ class MainWindow(QMainWindow, form_class_MainWindow) :
             self.FilePath.setText(filename[0])
             self.StartLoading()
             QApplication.processEvents()
-            excel = openpyxl.load_workbook(filename=filename[0])
+            self.excel = openpyxl.load_workbook(filename=filename[0])
             self.StopLoading()
             print("Success Load Excel")
+            self.NicknameDicSetting()
         else:
             print("Fail File Search")
 
+    def NicknameDicSetting(self):
+        print("Dictionary Setting Start")
+        if self.excel is None :
+            print("Load Excel first")
+            return
+
+        else :
+            print("Loading excel sheets")
+            try:
+                self.sheet = self.excel["아이디매칭"]
+            except:
+                print("throw an exception while Loading Sheet Fail")
+                self.sheet = self.CreateSheet("아이디매칭")
+            print("Load Sheet Success")
+
+    def CreateSheet(self, title):
+        print("Start Creating Sheet")
+        tempSheet = self.excel.create_sheet(title)
+        print("Success Creating Sheet")
+        self.excel.save("./test.xlsx")
+        print("Success Saving Excel")
+        return tempSheet
+    
     def OnClickFindNicknameButton(self):
         # TODO
         # 1. 이름과 닉네임이 매칭되어있는 시트를 불러온다.
